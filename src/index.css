@@ -1,0 +1,312 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a5f;
+
+  --color-cyan-custom-400: #38bdf8;
+  --color-cyan-custom-500: #0284c7;
+  --color-cyan-custom-600: #0369a1;
+  --color-emerald-custom-500: #10b981;
+  --color-emerald-custom-600: #059669;
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Outfit", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #f6f9fc;
+  color: #0f172a;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   3D Architectural Matrix Grid & Environment Background (Inspired by Video)
+   ========================================================================== */
+
+.perspective-grid-container {
+  perspective: 950px;
+  perspective-origin: 50% 25%;
+  overflow: hidden;
+}
+
+.perspective-grid-floor {
+  position: absolute;
+  width: 220%;
+  left: -60%;
+  bottom: -40%;
+  height: 140%;
+  transform: rotateX(68deg);
+  transform-origin: 50% 100%;
+  background-size: 56px 56px;
+  background-image: 
+    linear-gradient(to right, rgba(147, 197, 253, 0.42) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(147, 197, 253, 0.42) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at 50% 40%, rgba(0,0,0,0.95) 15%, rgba(0,0,0,0.6) 55%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 40%, rgba(0,0,0,0.95) 15%, rgba(0,0,0,0.6) 55%, transparent 85%);
+  pointer-events: none;
+}
+
+.perspective-grid-ambient {
+  background: 
+    radial-gradient(1200px circle at 50% 10%, rgba(224, 242, 254, 0.8) 0%, rgba(240, 249, 255, 0.4) 40%, transparent 80%),
+    radial-gradient(800px circle at 85% 25%, rgba(186, 230, 253, 0.35) 0%, transparent 60%),
+    radial-gradient(800px circle at 15% 35%, rgba(191, 219, 254, 0.3) 0%, transparent 60%);
+}
+
+/* ==========================================================================
+   3D Spheres: Mirror Chrome & Crystal Water-Drop Cyan (From Video DNA)
+   ========================================================================== */
+
+.sphere-chrome {
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #ffffff 0%, #f1f5f9 25%, #cbd5e1 55%, #94a3b8 80%, #475569 98%);
+  box-shadow: 
+    inset -3px -4px 7px rgba(15, 23, 42, 0.45),
+    inset 3px 3px 6px rgba(255, 255, 255, 1),
+    0 14px 28px -5px rgba(15, 23, 42, 0.22),
+    0 4px 8px -2px rgba(15, 23, 42, 0.12);
+}
+
+.sphere-glass {
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.95) 0%, rgba(186, 230, 253, 0.55) 35%, rgba(56, 189, 248, 0.3) 70%, rgba(2, 132, 199, 0.55) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 
+    inset 0 0 12px rgba(255, 255, 255, 0.8),
+    inset -2px -2px 6px rgba(2, 132, 199, 0.4),
+    0 12px 24px -4px rgba(2, 132, 199, 0.25),
+    0 0 16px rgba(56, 189, 248, 0.2);
+}
+
+/* ==========================================================================
+   Laser Connection Lines & Cyan Node Glow (From Video Blockchain Network)
+   ========================================================================== */
+
+.laser-glow {
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.7), 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+.laser-line-h {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.9) 30%, rgba(37, 99, 235, 0.9) 70%, transparent);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+}
+
+.laser-line-v {
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.9) 30%, rgba(37, 99, 235, 0.9) 70%, transparent);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+}
+
+/* ==========================================================================
+   Ultra-High-End 3D Glassmorphism Styles (Architectural Clarity)
+   ========================================================================== */
+
+.glass-nav-3d {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px) saturate(170%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(148, 163, 184, 0.08);
+}
+
+.glass-panel-3d {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 
+    0 24px 48px -12px rgba(15, 23, 42, 0.09),
+    0 6px 16px -4px rgba(148, 163, 184, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.glass-card-3d {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(170%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 
+    0 16px 36px -6px rgba(15, 23, 42, 0.07),
+    0 2px 8px -2px rgba(148, 163, 184, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-3d:hover {
+  transform: translateY(-4px);
+  border-color: rgba(147, 197, 253, 0.95);
+  box-shadow: 
+    0 28px 52px -10px rgba(37, 99, 235, 0.14),
+    0 0 24px rgba(56, 189, 248, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.glass-pill-3d {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 2px 8px rgba(148, 163, 184, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* ==========================================================================
+   Smooth Ambient Floating Animations
+   ========================================================================== */
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(14px) rotate(-2deg);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.03);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes laser-sweep {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 5.5s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+@keyframes drone-hover {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+  70% {
+    transform: translateY(-14px) rotate(-1.5deg);
+  }
+}
+
+@keyframes stamp-pop {
+  0% {
+    transform: scale(2.2) rotate(-15deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(0.92) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-drone-hover {
+  animation: drone-hover 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.animate-stamp-pop {
+  animation: stamp-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes scan-sweep {
+  0% {
+    top: 2%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 94%;
+    opacity: 1;
+  }
+  100% {
+    top: 2%;
+    opacity: 0.8;
+  }
+}
+
+.animate-scan-sweep {
+  position: absolute;
+  animation: scan-sweep 3.5s ease-in-out infinite;
+}
+
+/* Code & font styles */
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+}
+
