@@ -9,4 +9,4 @@ Landing page estática para presentar **CheckIt**, el PFM del proyecto.
 
 ## Cómo verla en local
 
-Abre `/home/runner/work/CheckIt-landing-page/CheckIt-landing-page/index.html` en el navegador.
+Abre `index.html` desde la raíz del proyecto en el navegador.
