@@ -136,7 +136,7 @@ export default function CheckyMascot({
         {/* Mascot PNG Render with Levitating Animation */}
         <div className={`relative ${sizeClasses[size] || sizeClasses.md} animate-drone-hover`}>
           <img
-            src="/checky.png"
+            src={`${import.meta.env.BASE_URL}checky.png`}
             alt="Checky - Centinela Pericial de CheckIt"
             className={`w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(2,132,199,0.28)] transition-all duration-300 ${
               clicked ? "scale-110 rotate-3" : "group-hover:scale-105"

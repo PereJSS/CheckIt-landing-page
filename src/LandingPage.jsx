@@ -995,7 +995,7 @@ export default function LandingPage() {
                 {/* Evidence Image with Active Laser Scanning Line */}
                 <div className="relative rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 h-52 sm:h-60 group">
                   <img
-                    src="/checkout_room.png"
+                    src={`${import.meta.env.BASE_URL}checkout_room.png`}
                     alt="Evidencia Inmobiliaria CheckIt"
                     className="w-full h-full object-cover filter brightness-[0.92] contrast-[1.05]"
                   />
@@ -1165,7 +1165,7 @@ export default function LandingPage() {
               <div className="relative mt-4 rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-900 shadow-inner group">
                 <video
                   ref={videoRef}
-                  src="/video-bg.mp4"
+                  src={`${import.meta.env.BASE_URL}video-bg.mp4`}
                   autoPlay
                   loop
                   muted={isVideoMuted}
@@ -2236,7 +2236,7 @@ export default function LandingPage() {
                             </div>
                           </div>
                           <img
-                            src="/crypto_seal.png"
+                            src={`${import.meta.env.BASE_URL}crypto_seal.png`}
                             alt="Sello Criptográfico CheckIt"
                             className="w-14 h-14 object-contain filter drop-shadow-[0_0_12px_rgba(6,182,212,0.5)] animate-stamp-pop shrink-0 hidden sm:block"
                           />

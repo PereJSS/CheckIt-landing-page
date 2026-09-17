@@ -126,7 +126,7 @@ export default function ForensicScannerHero({ onCertifyAction }) {
           {/* ── BASE LAYER (LEFT): UNPROTECTED RAW PHOTO ── */}
           <div className="absolute inset-0 w-full h-full">
             <img
-              src="/checkout_room.png"
+              src={`${import.meta.env.BASE_URL}checkout_room.png`}
               alt="Inspección Común sin CheckIt"
               className="w-full h-full object-cover filter brightness-[0.88] contrast-[0.95]"
               draggable={false}
@@ -158,7 +158,7 @@ export default function ForensicScannerHero({ onCertifyAction }) {
           >
             {/* Same room or checkin comparison with forensic enhancements */}
             <img
-              src="/checkout_room.png"
+              src={`${import.meta.env.BASE_URL}checkout_room.png`}
               alt="Inspección Sellada con CheckIt"
               className="w-full h-full object-cover filter brightness-[0.98] contrast-[1.05]"
               draggable={false}
@@ -208,7 +208,7 @@ export default function ForensicScannerHero({ onCertifyAction }) {
             {/* 3D Embossed Cryptographic Seal Stamp in Bottom Right */}
             <div className="absolute bottom-5 right-5 z-20 flex items-center gap-3 p-2.5 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-cyan-400/50 shadow-2xl animate-fade-in pointer-events-none">
               <img
-                src="/crypto_seal.png"
+                src={`${import.meta.env.BASE_URL}crypto_seal.png`}
                 alt="Sello Notarial CheckIt"
                 className="w-14 h-14 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_0_16px_rgba(6,182,212,0.6)] animate-pulse"
               />
